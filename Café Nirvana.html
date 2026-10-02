@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Café Nirvana — Good Food • Great Vibes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F8F5EF;--ink:#2B211B;--esp:#3A2920;--olive:#66705A;--gold:#B89B5E;--line:#E8DED0;--card:#fff;--soft:#efe8db;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#F8F5EF}}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.55}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.1}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:99px;font-weight:700;transition:.25s;min-height:48px}
+.btn.p{background:var(--esp);color:#fff}.btn.p:hover{background:var(--olive);transform:translateY(-2px)}
+.btn.s{border:1.5px solid var(--esp)}.btn.s:hover{background:var(--esp);color:#fff}
+nav{position:sticky;top:0;z-index:30;transition:.3s;border-bottom:1px solid transparent}
+nav.sc{background:rgba(248,245,239,.85);backdrop-filter:blur(12px);border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.12em;font-size:19px}
+.links{display:flex;gap:28px;font-size:14px;font-weight:500}.links a:hover{color:var(--olive)}
+.burger{display:none;font-size:24px;padding:8px}
+.tile{background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:56px;position:relative;overflow:hidden}
+/* HERO */
+.hero{padding:30px 0 70px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(46px,8vw,104px);letter-spacing:.02em;margin:14px 0}
+.tag{letter-spacing:.28em;font-size:13px;font-weight:700;color:var(--olive)}
+.hero p{font-size:20px;max-width:420px;margin-bottom:28px;color:#5b4c42}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.hv{position:relative;height:560px}
+.hv .big{position:absolute;inset:0 0 40px 40px;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,#d9c3a1,#8a6a4c 70%,#3A2920);box-shadow:0 30px 60px -20px rgba(58,41,32,.45);font-size:150px;animation:slow 18s ease-in-out infinite alternate}
+.hv .sm{position:absolute;left:0;bottom:0;width:190px;height:190px;border-radius:50%;background:linear-gradient(140deg,#c9cfb8,var(--olive));border:8px solid var(--bg);font-size:72px;box-shadow:0 20px 40px -15px rgba(0,0,0,.35)}
+.hv .note{position:absolute;right:-6px;top:30px;writing-mode:vertical-rl;letter-spacing:.3em;font-size:11px;color:var(--olive);font-weight:700}
+@keyframes slow{to{transform:scale(1.04)}}
+.hero .rv{opacity:0;transform:translateY(24px);animation:up .9s forwards}
+.hero .rv:nth-child(2){animation-delay:.15s}.hero .rv:nth-child(3){animation-delay:.3s}.hero .rv:nth-child(4){animation-delay:.45s}.hero .rv:nth-child(5){animation-delay:.6s}
+@keyframes up{to{opacity:1;transform:none}}
+section{padding:80px 0}
+h2{font-size:clamp(32px,5vw,54px);margin-bottom:12px}
+.sub{color:#6b5b50;max-width:560px}
+.intro{text-align:center}.intro h2,.intro p{margin-left:auto;margin-right:auto}.intro p{max-width:640px;margin-top:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
+.fc{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:.3s}
+.fc:hover{transform:translateY(-6px);box-shadow:0 22px 40px -22px rgba(58,41,32,.4)}
+.fc .tile{height:170px}.fc div.b{padding:16px}.fc h3{font-size:19px;margin-bottom:4px}.fc p{font-size:13px;color:#7a6a5e;min-height:40px}
+.fc .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-weight:700}.fc .row span{font-size:13px;color:var(--olive)}
+.badge{display:inline-block;font-size:12px;letter-spacing:.14em;color:var(--gold);font-weight:700}
+.strip{background:var(--esp);color:#f3eadc;padding:26px 0;overflow:hidden}
+.strip .in{display:flex;gap:44px;width:max-content;animation:mq 30s linear infinite}
+.strip a{font-family:'Playfair Display',serif;font-size:30px;white-space:nowrap}.strip a:hover{color:var(--gold)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.exp .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.exp .imgs{position:relative;height:520px}
+.exp .i1{position:absolute;inset:0 90px 70px 0;border-radius:24px;background:linear-gradient(150deg,#e4d3b8,#a17c58)}
+.exp .i2{position:absolute;right:0;bottom:0;width:230px;height:260px;border-radius:24px;background:linear-gradient(150deg,#b9c1a7,var(--olive));border:8px solid var(--bg)}
+.exp .words{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.exp .words span{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;font-size:13px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.mom{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}.mom:nth-child(2){background:var(--esp);color:#f3eadc;transform:translateY(20px)}
+.mom h3{font-size:26px;margin-bottom:8px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:160px;gap:14px;margin-top:34px}
+.gal .tile{border-radius:18px;font-size:44px}.gal .tile::after{content:"";position:absolute;inset:0;transition:.5s}
+.gal .tile>b{transition:.5s;font-weight:400}.gal .tile:hover>b{transform:scale(1.25)}
+.gal .g1{grid-row:span 3;grid-column:span 2}.gal .g2{grid-row:span 2}.gal .g4{grid-column:span 2;grid-row:span 1}.gal .g3{grid-row:span 1}
+.small{font-size:12px;color:#7a6a5e;margin-top:10px}
+.why{background:var(--soft)}
+.grid4.w .mom{padding:24px;transform:none!important;background:#fff!important;color:var(--ink)!important}.grid4.w h3{font-size:21px}
+.cta{background:var(--esp);color:#f3eadc;border-radius:32px;padding:70px 30px;text-align:center}
+.cta .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}.cta .btn.s{border-color:#f3eadc}.cta .btn.s:hover{background:#f3eadc;color:var(--esp)}.cta .btn.p{background:var(--gold);color:var(--esp)}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.info{display:grid;gap:12px;margin-top:20px}.info div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;font-size:14px}.info em{color:#9a8a7d}
+footer{background:var(--esp);color:#d9ccba;padding:50px 0 30px;margin-top:50px}
+footer .links{flex-wrap:wrap;gap:18px;margin:18px 0;font-size:14px}
+/* ORDER APP */
+body.app{background:#fbf9f4}
+.obar{position:sticky;top:0;z-index:30;background:rgba(251,249,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.obar .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;gap:10px}
+.back{font-size:14px;font-weight:700;color:var(--olive)}
+.pill{background:var(--soft);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700}
+.ohero{padding:44px 0 20px;text-align:center}.ohero h1{font-size:clamp(36px,6vw,60px)}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin:28px auto 0}
+.tc{background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px 22px;text-align:left;transition:.25s}
+.tc:hover{transform:translateY(-4px)}.tc.on{border-color:var(--esp);background:var(--esp);color:#f3eadc}
+.tc .ic{font-size:36px}.tc h3{font-size:24px;margin:8px 0 4px}.tc p{font-size:14px;opacity:.8;margin-bottom:16px}
+.tc .btn{width:100%;background:var(--esp);color:#fff}.tc.on .btn{background:var(--gold);color:var(--esp)}
+.detail{max-width:760px;margin:22px auto 0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;text-align:left;animation:up .4s}
+.detail h3{font-size:22px;margin-bottom:12px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fields .full{grid-column:1/-1}
+label{font-size:12px;font-weight:700;color:#6b5b50;display:block;margin-bottom:4px}
+input,textarea,select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;font:inherit;background:#fffdf9;color:var(--ink)}
+input:focus,textarea:focus{border-color:var(--olive);outline:0}
+.err{color:#a4372b;font-size:12px;margin-top:3px}
+.tools{position:sticky;top:60px;z-index:20;background:rgba(251,249,244,.95);backdrop-filter:blur(10px);padding:12px 0;border-bottom:1px solid var(--line)}
+.search{margin-bottom:10px}
+.cats{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.cats button{white-space:nowrap;padding:10px 18px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-size:14px;font-weight:700;transition:.2s;min-height:44px}
+.cats button.on{background:var(--esp);color:#fff;border-color:var(--esp)}
+.cname{font-size:30px;margin:34px 0 14px}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mi{background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;overflow:hidden;animation:up .35s}
+.mi .tile{width:112px;min-height:150px;font-size:40px;flex:none}
+.mi .b{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.mi h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;line-height:1.2}.mi p{font-size:12px;color:#7a6a5e}
+.vs{display:flex;gap:6px;flex-wrap:wrap}.vs button{font-size:12px;font-weight:700;padding:7px 11px;border-radius:10px;border:1.5px solid var(--line);transition:.2s;min-height:36px}
+.vs button.on{background:var(--olive);border-color:var(--olive);color:#fff;transform:scale(1.04)}
+.mi .ft{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:8px}
+.price{font-weight:800;font-size:17px}
+.qty{display:flex;align-items:center;gap:2px;background:var(--soft);border-radius:99px}.qty button{width:34px;height:34px;font-size:18px;font-weight:700}.qty b{min-width:20px;text-align:center}
+.add{background:var(--esp);color:#fff;border-radius:99px;padding:0 16px;height:38px;font-weight:700;font-size:13px;transition:.2s}.add:active{transform:scale(.9)}.add.ok{background:var(--olive)}
+.fcart{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:40;background:var(--esp);color:#fff;border-radius:99px;padding:16px 24px;font-weight:700;box-shadow:0 18px 40px -10px rgba(0,0,0,.5);animation:up .4s}
+.fcart.bump{animation:bump .3s}@keyframes bump{50%{transform:scale(1.1)}}
+.scrim{position:fixed;inset:0;background:rgba(43,33,27,.45);z-index:50;opacity:0;pointer-events:none;transition:.3s}.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:60;background:#fffdf9;display:flex;flex-direction:column;transition:transform .4s cubic-bezier(.2,.8,.2,1);top:0;right:0;bottom:0;width:min(440px,100%);transform:translateX(105%);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.on{transform:none}
+.dh{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.steps{display:flex;gap:6px;padding:12px 20px;font-size:12px;font-weight:700;color:#9a8a7d}.steps span.on{color:var(--esp)}.steps span.on::before{content:"● "}
+.db{flex:1;overflow:auto;padding:16px 20px}.df{padding:16px 20px;border-top:1px solid var(--line)}
+.ci{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.ci small{color:#7a6a5e;display:block}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin-bottom:12px}
+.row2{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px}
+.ok-wrap{text-align:center;padding:50px 10px}
+.check{width:92px;height:92px;margin:0 auto 20px}.check circle{stroke:var(--olive);stroke-width:4;fill:none;stroke-dasharray:260;stroke-dashoffset:260;animation:dr .8s forwards}.check path{stroke:var(--olive);stroke-width:5;fill:none;stroke-dasharray:60;stroke-dashoffset:60;animation:dr .5s .6s forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.empty{text-align:center;color:#7a6a5e;padding:40px 0}
+@media(max-width:900px){
+ .links,nav .btn.d{display:none}.burger{display:block}
+ .hero .wrap,.exp .wrap,.visit .wrap{grid-template-columns:1fr}.hv{height:380px}.hv .big{font-size:90px}.hv .sm{width:120px;height:120px;font-size:44px}
+ .grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.mom:nth-child(2){transform:none}
+ .gal{grid-template-columns:repeat(2,1fr)}.gal .g1{grid-column:span 2}.exp .imgs{height:380px}.exp .i2{width:150px;height:170px}
+ section{padding:56px 0}.menu{grid-template-columns:1fr}
+ .drawer{top:auto;left:0;width:100%;height:92vh;border-radius:24px 24px 0 0;transform:translateY(105%)}
+ .fcart{left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));text-align:center;border-radius:18px}
+ .types{grid-template-columns:1fr}.fields{grid-template-columns:1fr}
+}
+.mnav{display:none;position:fixed;inset:72px 0 auto;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--line);z-index:29;flex-direction:column;gap:14px}.mnav.on{display:flex}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div id="app"></div><div id="ov"></div>
+<script>
+// ===== EDIT ME: image URLs / data URIs keyed by id (item id, or hero/exp1/exp2/g1..g5). Empty = styled placeholder. =====
+const IMG={};
+const MAPS="https://maps.app.goo.gl/4yZd7sdbrPeqys1TA";
+// ===== MENU DATA (all prices live here) =====
+const P=(n,d,a,b)=>({n,d,v:[["8 Inch",a],["10 Inch",b]]});
+const B=(n,a,b,c)=>({n,v:[["Burger Only",a],["Cold Coffee Combo",b],["Cold Drink Combo",c]]});
+const S=(n,d,a,b)=>({n,d,v:[["Pasta",a],["Spaghetti",b]]});
+const S1=(n,p,d)=>({n,d,v:[["",p]]});
+const L=(c,arr)=>arr.map(([n,p])=>S1(n,p,""));
+const CATS=[
+{k:"momos",t:"Momos & Maggie",e:"🥟",sub:[
+ {t:"Momos",items:[["Fried Momos",89],["Peri Peri Momos",99],["Schezwan Momos",100],["Paneer Momos",110],["Paneer Schezwan Momos",120]].map(([n,p])=>S1(n,p,""))},
+ {t:"Flavours of Maggie",e:"🍜",items:[["Plain Maggie",40],["Peri Peri Masala Maggie",45],["Veggie Maggie",50],["Schezwan Maggie",50],["Italian Cheese Maggi",75],["Peri Peri Masala with Cheese Maggie",60],["Korean Maggie",60],["Korean Cheese Maggie",80]].map(([n,p])=>S1(n,p,""))}]},
+{k:"sand",t:"Sandwich",e:"🥪",items:[["Classic Grilled Sandwich",80],["Cheese Grilled Sandwich",100],["Bombay Masala Sandwich",90],["Veggie Loaded Sandwich",100],["Cheese Chilli Sandwich",100],["Paneer Tikka Sandwich",110],["Paneer Tikka Cheese Sandwich",130],["Maxican Sandwich",120],["Exotic Veggie Grilled Sandwich",150],["Cheese Exotic Veggie with Paneer Sandwich",170],["Club Sandwich",150]].map(([n,p])=>S1(n,p,""))},
+{k:"vada",t:"Vadapav",e:"🍔",items:[["Grilled Vadapav",30],["Grilled Schezwan Vadapav",40],["Cheese Grilled Vadapav",50],["Cheese Blast Vadapav",65],["Ulata Vadapav",50],["Cheese Ulata Vadapav",70]].map(([n,p])=>S1(n,p,""))},
+{k:"hot",t:"Hot Beverages",e:"☕",items:[["Kulhad Masala Tea",20],["Masala Tea",15],["Black Tea",15],["Lemon Tea",20],["Green Tea",30],["Ilaychi Tea",25],["Okala",35],["Filter Coffee",30],["Black Coffee",20],["Hot Chocolate Coffee",40],["Hot Chocolate Milk",40],["Biscuit Cup Tea",30],["Biscuit Cup Coffee",40],["Bun Muska",20]].map(([n,p])=>S1(n,p,""))},
+{k:"pizza",t:"Authentic Italian Pizza",e:"🍕",items:[
+P("Classic Margherita Pizza","Herbed tomato sauce, mozzarella cheese, American corn, Tomato, Besil",149,189),
+P("Chilli Zing Pizza","Herbed tomato sauce, mozzarella cheese, chilli, capcicum, red paprika",159,199),
+P("Sweet Corn And Onion Pizza","Herbed tomato sauce, mozzarella cheese, Corn, Onion",159,199),
+P("Simply Veg Pizza","Herbed tomato sauce, mozzarella cheese, corn, capcicum, tomato, onion, red paprika",179,219),
+P("Indian Delight Pizza","Herbed tomato sauce, mozzarella cheese, American corn, tomato, onion, capcicum, jalapeno, olive",199,239),
+P("Paneer Butter Masala Pizza","Herbed tomato sauce, mozzarella cheese, paneer with butter masala, onion, capcicum, butter",219,259),
+P("Panner 65 Pizza","Herbed tomato sauce, mozzarella cheese, paneer fry with 65 masala, Onion, capcicum, red paprika",219,259),
+P("Exotica Pizza","Herbed tomato sauce, mozzarella cheese, broccoli, baby corn, red & yellow Bell pepper, zucchini",219,259),
+P("Farmhouse Villa Pizza","Herbed tomato sauce, mozzarella cheese, paneer, capcicum, corn, onion, tomato, jalapeno, olive, Red paprika",219,259),
+P("Paneer Tikka Pizza","Herbed tomato sauce, mozzarella cheese, paneer with tikka masala, onion, capcicum",219,259),
+P("Garden Pizza With Pesto Sauce","Besil pesto sauce, mozzarella cheese, paneer, capcicum, broccoli, corn, jalapeno",229,269),
+P("Mexican Style Pizza","Mexican salsa sauce, mozzarella cheese, baby corn, capcicum, jalapeno, red paprika",229,269),
+P("Korean Style Paneer Pizza","Korean sauce, mozzarella cheese, broccoli, capcicum, baby corn, red & yellow bell pepper, white sesame seeds",229,269)]},
+{k:"burger",t:"Burgers",e:"🍔",items:[B("Classic Burger",59,219,170),B("Classic Cheese Burger",79,227,190),B("Peri Peri Spicy Veggi Loaded Burger",79,227,190),B("Peri Peri Spicy Paneer Burger",99,249,210),B("Korean Burger",99,249,210),B("Spicy Cheese Paneer Burger",119,279,230),B("Maharaja Double Patty Burger",119,279,230),B("Korean Spicy Paneer Burger",119,279,230),B("Maharaja Cheese Double Patty Burger",129,289,240)]},
+{k:"pasta",t:"Pasta & Spaghetti",e:"🍝",items:[
+S("Alfredo White Sauce with Exotic Veggie","White sauce, broccoli, baby corn, red & yellow bell pepper, cheese",159,169),
+S("Arrabita Red Sauce with Exotic Veggie","Tomato sauce, broccoli, baby corn, red & yellow bell pepper, cheese",159,169),
+S("Pink Sauce with Exotic Veggie","Pesto sauce, broccoli, baby corn, red & yellow bell pepper, cheese",169,179),
+S("Pesto Sauce with Exotic Veggie","Pesto sauce, broccoli, baby corn, red & yellow bell pepper, cheese",179,189),
+{n:"Agly Oilo Spaghetti",d:"",v:[["Spaghetti",199]]}]},
+{k:"mini",t:"Mini Pizza",e:"🍕",items:[
+S1("Simply Veg Pizza",69,"American corn, capcicum, tomato, onion"),S1("Indian Delight Pizza",79,"American corn, tomato, onion, capcicum, jalapeno"),
+S1("Paneer Tikka Pizza",89,"Paneer with tikka masala, onion, capcicum"),S1("Paneer Butter Masala Pizza",89,"Paneer fry with 65 masala, capcicum, onion"),
+S1("Exotica Pizza",99,"Broccoli, baby corn, red and yellow bell pepper, onion"),S1("Garden Pizza with Pesto Sauce",99,"Besil pesto sauce, paneer, onion, capcicum")]}];
+// flatten: sections with id
+const SECS=[];
+CATS.forEach(c=>{(c.sub||[{t:c.t,e:c.e,items:c.items}]).forEach(s=>SECS.push({cat:c.k,catT:c.t,t:s.t,e:s.e||c.e,items:s.items.map((it,i)=>({...it,id:(c.k+"-"+s.t+"-"+i).replace(/\W+/g,"_"),sec:s.t,e:s.e||c.e}))}))});
+const ALL=SECS.flatMap(s=>s.items);
+const find=(sec,n)=>ALL.find(i=>i.sec===sec&&i.n===n);
+const FEAT=[["Authentic Italian Pizza","Classic Margherita Pizza"],["Authentic Italian Pizza","Paneer Tikka Pizza"],["Burgers","Classic Cheese Burger"],["Momos","Paneer Momos"],["Flavours of Maggie","Italian Cheese Maggi"],["Hot Beverages","Filter Coffee"],["Sandwich","Cheese Grilled Sandwich"],["Authentic Italian Pizza","Exotica Pizza"]].map(([s,n])=>find(s,n));
+const rs=n=>"₹"+n;
+// ===== STATE =====
+const st={type:null,cart:[],cat:"all",q:"",sel:{},qty:{},drawer:false,step:0,form:{},err:{},done:null};
+const $=s=>document.querySelector(s);
+const tile=(id,e,g)=>`<div class="tile" style="background-image:${IMG[id]?`url(${IMG[id]})`:g||"linear-gradient(145deg,#eadfcb,#c9ad86)"}">${IMG[id]?"":`<b>${e}</b>`}</div>`;
+// ===== LANDING =====
+function landing(){
+const nav=`<nav id="nv"><div class="wrap"><a href="#/" class="logo">CAFÉ NIRVANA</a><div class="links"><a href="#/" data-s="top">Home</a><a href="#/" data-s="menu">Menu</a><a href="#/" data-s="exp">Experience</a><a href="#/" data-s="gal">Gallery</a><a href="#/" data-s="about">About</a><a href="#/" data-s="visit">Contact</a></div><div style="display:flex;gap:8px;align-items:center"><a class="btn p" href="#/order" style="padding:10px 20px;min-height:42px">Order Now</a><button class="burger" aria-label="Menu" id="bg">☰</button></div></div></nav>
+<div class="mnav" id="mn"><a data-s="menu" href="#/">Menu</a><a data-s="exp" href="#/">Experience</a><a data-s="gal" href="#/">Gallery</a><a data-s="about" href="#/">About</a><a data-s="visit" href="#/">Contact</a></div>`;
+const fc=FEAT.map(i=>`<a href="#/order" class="fc">${tile(i.id,i.e)}<div class="b"><h3 class="serif">${i.n}</h3><p>${i.d||"&nbsp;"}</p><div class="row"><b>${i.v.length>1&&i.sec!=="Burgers"?"from ":""}${rs(i.v[0][1])}</b><span>Order →</span></div></div></a>`).join("");
+const cats=["Momos","Pizza","Burgers","Pasta","Sandwich","Coffee","Maggie","Vadapav"];
+const strip=[...cats,...cats].map(c=>`<a href="#/order">${c}</a>`).join("");
+const gal=[["g1","☕","linear-gradient(150deg,#d8c3a2,#7a5a40)"],["g2","🍕","linear-gradient(150deg,#e9dcc3,#b58f62)"],["g3","🥟","linear-gradient(150deg,#c4cab2,#66705A)"],["g4","🥪","linear-gradient(150deg,#efe3cf,#a88b64)"],["g5","🍝","linear-gradient(150deg,#dccdb4,#8c6d4e)"]].map(([id,e,g])=>`<div class="tile ${id}" style="background-image:${IMG[id]?`url(${IMG[id]})`:g}">${IMG[id]?"":`<b>${e}</b>`}</div>`).join("");
+return nav+`<main id="top"><header class="hero"><div class="wrap"><div><p class="tag rv">FOOD • COFFEE • MOMENTS</p><h1 class="rv">CAFÉ<br>NIRVANA</h1><p class="tag rv" style="color:var(--gold)">GOOD FOOD • GREAT VIBES</p><p class="rv" style="margin-top:14px">A little escape from the everyday.</p><div class="acts rv"><a class="btn p" href="#/" data-s="menu">Explore Menu</a><a class="btn s" href="#/order">Order Now</a></div></div>
+<div class="hv rv"><div class="tile big" style="${IMG.hero?`background-image:url(${IMG.hero})`:""}">${IMG.hero?"":"☕"}</div><div class="tile sm">🍕</div><span class="note">FOOD • COFFEE • MOMENTS</span></div></div></header>
+<section class="intro" id="about"><div class="wrap"><h2>A Little Taste of Nirvana</h2><p class="serif" style="font-size:24px;font-style:italic;color:var(--olive)">Good food, warm conversations and a place where you can simply slow down.</p><p>Cafe Nirvana brings together comforting food, refreshing drinks and a relaxed café atmosphere — made for everyday moments and memorable ones.</p></div></section>
+<section id="menu" style="padding-top:20px"><div class="wrap"><span class="badge">FEATURED</span><h2>From the Nirvana Menu</h2><p class="sub">A glimpse of what you can order.</p><div class="grid4">${fc}</div></div></section>
+<div class="strip"><div class="in">${strip}</div></div>
+<section class="exp" id="exp"><div class="wrap"><div class="imgs"><div class="tile i1" style="${IMG.exp1?`background-image:url(${IMG.exp1})`:""}">${IMG.exp1?"":"☕"}</div><div class="tile i2">🥟</div></div><div><h2>More Than Just a Café</h2><p class="serif" style="font-size:24px;font-style:italic;color:var(--olive);margin-bottom:14px">Come for the food. Stay for the feeling.</p><p class="sub">Coffee, food, friends, conversations and a little room to relax.</p><div class="words"><span>Coffee</span><span>Food</span><span>Friends</span><span>Conversations</span><span>Relaxation</span><span>Atmosphere</span></div></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="grid3"><div class="mom"><h3>Slow Mornings</h3><p>Coffee and comfort.</p></div><div class="mom"><h3>Quick Bites</h3><p>Momos, Maggie, sandwiches and more.</p></div><div class="mom"><h3>Evening Conversations</h3><p>Food, drinks and good vibes.</p></div></div></div></section>
+<section id="gal"><div class="wrap"><h2>Gallery</h2><p class="sub">Moments from the café.</p><div class="gal">${gal}</div><p class="small">Placeholder visuals — replace with real Cafe Nirvana photos in the IMG object.</p></div></section>
+<section class="why"><div class="wrap"><h2>Why Cafe Nirvana?</h2><div class="grid4 w"><div class="mom"><h3>Good Food</h3><p>Comforting favourites and café classics.</p></div><div class="mom"><h3>Good Coffee</h3><p>Warm beverages for every mood.</p></div><div class="mom"><h3>Good Atmosphere</h3><p>A place to relax, connect and enjoy.</p></div><div class="mom"><h3>Easy Ordering</h3><p>Order from home or directly from your café table.</p></div></div></div></section>
+<section><div class="wrap"><div class="cta"><h2>Ready to Order?</h2><p>Choose your experience.</p><div class="acts"><a class="btn p" href="#/order" data-t="home">🏠 Order for Home</a><a class="btn s" href="#/order" data-t="cafe">☕ Order at Café</a></div></div></div></section>
+<section class="visit" id="visit" style="padding-top:20px"><div class="wrap"><div><h2>Visit Cafe Nirvana</h2><p class="sub">Find us on Google Maps.</p><div class="acts" style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap"><a class="btn p" target="_blank" rel="noopener" href="${MAPS}">Google Maps</a><a class="btn s" target="_blank" rel="noopener" href="${MAPS}">Get Directions</a></div></div><div class="info"><div>Phone <em>Add phone number</em></div><div>Opening Hours <em>Add opening hours</em></div><div>Instagram <em>Add Instagram handle</em></div></div></div></section></main>
+<footer><div class="wrap"><div class="logo" style="color:#fff">CAFÉ NIRVANA</div><div class="tag" style="color:var(--gold)">GOOD FOOD • GREAT VIBES</div><div class="links"><a href="#/" data-s="top">Home</a><a href="#/" data-s="menu">Menu</a><a href="#/order">Order</a><a href="#/" data-s="exp">Experience</a><a href="#/" data-s="gal">Gallery</a><a href="#/" data-s="visit">Contact</a><a target="_blank" rel="noopener" href="${MAPS}">Get Directions</a></div><p class="small">© Café Nirvana</p></div></footer>`}
+// ===== ORDER PAGE =====
+const cartCount=()=>st.cart.reduce((a,c)=>a+c.qty,0), sub=()=>st.cart.reduce((a,c)=>a+c.qty*c.price,0);
+function cardHTML(i){const vi=st.sel[i.id]??0,v=i.v[vi],q=st.qty[i.id]||1;
+return `<article class="mi">${tile(i.id,i.e)}<div class="b"><h4>${i.n}</h4>${i.d?`<p>${i.d}</p>`:""}${i.v.length>1?`<div class="vs">${i.v.map((x,k)=>`<button class="${k===vi?"on":""}" data-v="${i.id}:${k}">${x[0]} ${i.sec==="Authentic Italian Pizza"||i.sec==="Pasta & Spaghetti"||i.sec==="Burgers"?rs(x[1]):""}</button>`).join("")}</div>`:""}<div class="ft"><span class="price">${rs(v[1])}</span><div class="qty"><button data-q="${i.id}:-1" aria-label="Less">−</button><b>${q}</b><button data-q="${i.id}:1" aria-label="More">+</button></div><button class="add" data-a="${i.id}">Add</button></div></div></article>`}
+function menuHTML(){const q=st.q.trim().toLowerCase();let out="";
+SECS.forEach(s=>{if(st.cat!=="all"&&s.cat!==st.cat)return;const it=s.items.filter(i=>!q||(i.n+" "+(i.d||"")+" "+s.t+" "+s.catT).toLowerCase().includes(q));if(it.length)out+=`<h3 class="cname">${s.t}</h3><div class="menu">${it.map(cardHTML).join("")}</div>`});
+return out||`<p class="empty">No dishes match “${st.q}”. Try another name, category or ingredient.</p>`}
+function typeHTML(){const t=st.type,f=st.form,e=st.err;
+const inp=(k,l,ph="",tp="text")=>`<div><label>${l}</label><input data-f="${k}" type="${tp}" value="${(f[k]||"").replace(/"/g,"&quot;")}" placeholder="${ph}">${e[k]?`<div class="err">${e[k]}</div>`:""}</div>`;
+if(t==="home")return `<div class="detail"><h3>Delivery Order</h3><div class="fields">${inp("name","Name *")}${inp("phone","Mobile Number *","","tel")}<div class="full"><label>Full Address *</label><textarea data-f="addr" rows="2">${f.addr||""}</textarea>${e.addr?`<div class="err">${e.addr}</div>`:""}</div>${inp("area","Area / Locality")}${inp("land","Landmark")}<div class="full"><label>Delivery Instructions</label><textarea data-f="note" rows="2">${f.note||""}</textarea></div></div></div>`;
+if(t==="cafe")return `<div class="detail"><h3>Dining at Cafe Nirvana</h3><div class="fields">${inp("table","Table Number *","e.g. 7")}${inp("name","Customer Name (optional)")}<div class="full"><label>Special Instructions</label><textarea data-f="note" rows="2">${f.note||""}</textarea></div></div></div>`;return""}
+function orderPage(){const n=cartCount();
+return `<div class="obar"><div class="wrap"><a class="back" href="#/">← Back to Cafe Nirvana</a><span class="logo" style="font-size:15px">CAFÉ NIRVANA</span><span class="pill">${st.type?(st.type==="home"?"🏠 Home":"☕ Café"):"Choose type"}</span></div></div>
+<main><section class="ohero"><div class="wrap"><h1>What are you craving?</h1><p class="sub" style="margin:10px auto 0">Choose how you'd like to enjoy Cafe Nirvana.</p>
+<div class="types"><div class="tc ${st.type==="home"?"on":""}"><div class="ic">🏠</div><h3>Order for Home</h3><p>Enjoy Cafe Nirvana from home.</p><button class="btn" data-t="home">Order for Home</button></div><div class="tc ${st.type==="cafe"?"on":""}"><div class="ic">☕</div><h3>Order at Café</h3><p>Already at Cafe Nirvana? Order directly from your table.</p><button class="btn" data-t="cafe">Order at Café</button></div></div><div id="td">${typeHTML()}</div></div></section>
+<div class="tools"><div class="wrap"><input class="search" id="sq" type="search" placeholder="Search menu..." value="${st.q}"><div class="cats">${[["all","All"],...CATS.map(c=>[c.k,c.t])].map(([k,l])=>`<button class="${st.cat===k?"on":""}" data-c="${k}">${l}</button>`).join("")}</div></div></div>
+<div class="wrap" style="padding-bottom:110px"><div id="mn2">${menuHTML()}</div></div></main>
+${n?`<button class="fcart" id="fc">🛒 ${n} Item${n>1?"s":""} • ${rs(sub())}</button>`:""}
+<div class="scrim ${st.drawer?"on":""}" id="sc"></div><aside class="drawer ${st.drawer?"on":""}" id="dr">${drawerHTML()}</aside>`}
+function drawerHTML(){const S=["Order Type","Your Details","Confirm"];
+if(st.done){const d=st.done;return `<div class="dh"><b class="serif" style="font-size:22px">Order Confirmed</b><button data-x="close" style="font-size:22px">✕</button></div><div class="db"><div class="ok-wrap"><svg class="check" viewBox="0 0 92 92"><circle cx="46" cy="46" r="41"/><path d="M27 48l13 13 26-28"/></svg><h2 style="font-size:32px">Order Confirmed</h2>${d.type==="cafe"?`<p>Your order will be served at:</p><h3 class="serif" style="font-size:40px;margin-top:6px">Table ${d.table}</h3>`:`<p>Your Cafe Nirvana order has been received.</p>`}<p class="small">Total ${rs(d.total)}</p></div></div><div class="df"><button class="btn p" style="width:100%" data-x="new">Done</button></div>`}
+const head=`<div class="dh"><b class="serif" style="font-size:22px">Your Order</b><button data-x="close" style="font-size:22px" aria-label="Close">✕</button></div><div class="steps">${S.map((s,i)=>`<span class="${i<=st.step?"on":""}">${i+1}. ${s}</span>`).join("→")}</div>`;
+const items=st.cart.map((c,i)=>`<div class="ci"><div><b>${c.name}</b><small>${c.variant||""}</small><div class="qty" style="display:inline-flex;margin-top:6px"><button data-ci="${i}:-1">−</button><b>${c.qty}</b><button data-ci="${i}:1">+</button></div></div><b>${rs(c.qty*c.price)}</b></div>`).join("");
+const totals=`<div class="row2"><span>Subtotal</span><span>${rs(sub())}</span></div><div class="tot"><span>Total</span><span>${rs(sub())}</span></div>`;
+const ot=st.type?(st.type==="home"?"🏠 Order for Home":"☕ Order at Café"):"No order type selected";
+if(!st.cart.length)return head+`<div class="db"><p class="empty">Your cart is empty. Add something tasty.</p></div>`;
+if(st.step===0)return head+`<div class="db"><p class="pill" style="display:inline-block;margin-bottom:8px">${ot}</p>${items}</div><div class="df">${totals}<button class="btn p" style="width:100%" data-x="next">Checkout</button><button class="small" style="display:block;margin:10px auto 0" data-x="clear">Clear cart</button></div>`;
+if(st.step===1)return head+`<div class="db">${typeHTML()}</div><div class="df"><button class="btn s" style="width:100%;margin-bottom:8px" data-x="back">Back</button><button class="btn p" style="width:100%" data-x="review">Continue</button></div>`;
+return head+`<div class="db"><p class="pill" style="display:inline-block;margin-bottom:8px">${ot}</p>${items.replace(/<div class="qty".*?<\/div>/g,"")}<p class="small" style="margin-top:12px">${st.type==="cafe"?`Table ${st.form.table}${st.form.name?" • "+st.form.name:""}`:`${st.form.name}, ${st.form.phone}<br>${st.form.addr}${st.form.area?", "+st.form.area:""}`}</p></div><div class="df">${totals}<button class="btn s" style="width:100%;margin-bottom:8px" data-x="back">Back</button><button class="btn p" style="width:100%" data-x="place">${st.type==="home"?"Place Home Order":"Place Café Order"}</button></div>`}
+// ===== ACTIONS =====
+const redrawDrawer=()=>{const d=$("#dr");if(d)d.innerHTML=drawerHTML()};
+const redrawFC=()=>{const o=$("#fc"),n=cartCount();if(!n){o&&o.remove();return}
+if(!o){const b=document.createElement("button");b.id="fc";b.className="fcart";$("#app").appendChild(b)}const f=$("#fc");f.textContent=`🛒 ${n} Item${n>1?"s":""} • ${rs(sub())}`;f.classList.remove("bump");void f.offsetWidth;f.classList.add("bump")};
+function validate(){const f=st.form,e={};if(!st.type)e.type="Choose an order type";
+if(st.type==="home"){if(!(f.name||"").trim())e.name="Name is required";if(!/^[+\d][\d\s-]{6,}$/.test((f.phone||"").trim()))e.phone="Enter a valid mobile number";if(!(f.addr||"").trim())e.addr="Address is required"}
+if(st.type==="cafe"&&!(f.table||"").trim())e.table="Table number is required";st.err=e;return!Object.keys(e).length}
+function render(){const h=location.hash||"#/";const app=$("#app");
+if(h.startsWith("#/order")){document.body.className="app";app.innerHTML=orderPage();window.scrollTo(0,0)}
+else{document.body.className="";app.innerHTML=landing();window.scrollTo(0,0)}}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-s],[data-t],[data-v],[data-q],[data-a],[data-c],[data-ci],[data-x],#fc,#sc,#bg");if(!t)return;
+const d=t.dataset;
+if(t.id==="bg"){$("#mn").classList.toggle("on");return}
+if(d.s!==undefined){e.preventDefault();$("#mn")&&$("#mn").classList.remove("on");const el=d.s==="top"?document.body:document.getElementById(d.s);if(location.hash.startsWith("#/order")){location.hash="#/";setTimeout(()=>(document.getElementById(d.s)||document.body).scrollIntoView(),50)}else el.scrollIntoView();return}
+if(d.t){st.type=d.t;st.err={};if(location.hash.startsWith("#/order")){e.preventDefault();$("#td").innerHTML=typeHTML();document.querySelectorAll(".tc").forEach((c,i)=>c.classList.toggle("on",(i===0)===(d.t==="home")));document.querySelector(".pill").textContent=d.t==="home"?"🏠 Home":"☕ Café";$("#td").scrollIntoView({behavior:"smooth",block:"nearest"})}return}
+if(d.v){const[id,k]=d.v.split(":");st.sel[id]=+k;const i=ALL.find(x=>x.id===id);t.closest(".mi").outerHTML=cardHTML(i);return}
+if(d.q){const[id,k]=d.q.split(":");st.qty[id]=Math.max(1,(st.qty[id]||1)+ +k);t.closest(".mi").outerHTML=cardHTML(ALL.find(x=>x.id===id));return}
+if(d.a){const i=ALL.find(x=>x.id===d.a),vi=st.sel[i.id]??0,v=i.v[vi],q=st.qty[i.id]||1,key=i.id+":"+vi;
+const ex=st.cart.find(c=>c.key===key);if(ex)ex.qty+=q;else st.cart.push({key,name:i.n,variant:v[0],price:v[1],qty:q});st.qty[i.id]=1;
+const card=t.closest(".mi");card.outerHTML=cardHTML(i);const nb=document.querySelector(`[data-a="${i.id}"]`);if(nb){nb.textContent="Added ✓";nb.classList.add("ok");setTimeout(()=>{nb.textContent="Add";nb.classList.remove("ok")},900)}redrawFC();redrawDrawer();return}
+if(d.c){st.cat=d.c;document.querySelectorAll(".cats button").forEach(b=>b.classList.toggle("on",b.dataset.c===d.c));$("#mn2").innerHTML=menuHTML();return}
+if(d.ci){const[i,k]=d.ci.split(":");st.cart[+i].qty+=+k;if(st.cart[+i].qty<1)st.cart.splice(+i,1);redrawDrawer();redrawFC();return}
+if(t.id==="fc"){st.drawer=true;st.step=0;$("#sc").classList.add("on");$("#dr").classList.add("on");redrawDrawer();return}
+if(t.id==="sc"||d.x==="close"){st.drawer=false;$("#sc").classList.remove("on");$("#dr").classList.remove("on");if(st.done){st.done=null}return}
+if(d.x==="clear"){st.cart=[];redrawDrawer();redrawFC();return}
+if(d.x==="next"){if(!st.type){st.drawer=false;$("#dr").classList.remove("on");$("#sc").classList.remove("on");alert("Please choose Order for Home or Order at Café first.");window.scrollTo({top:0,behavior:"smooth"});return}st.step=1;redrawDrawer();return}
+if(d.x==="back"){st.step--;redrawDrawer();return}
+if(d.x==="review"){if(validate()){st.step=2}redrawDrawer();return}
+if(d.x==="place"){if(!validate()||!st.cart.length){st.step=1;redrawDrawer();return}st.done={type:st.type,table:st.form.table,total:sub()};st.cart=[];redrawDrawer();redrawFC();$("#td").innerHTML=typeHTML();return}
+if(d.x==="new"){st.done=null;st.drawer=false;st.step=0;$("#sc").classList.remove("on");$("#dr").classList.remove("on");return}
+});
+document.addEventListener("input",e=>{const t=e.target;if(t.dataset.f){st.form[t.dataset.f]=t.value;if(st.err[t.dataset.f]){delete st.err[t.dataset.f];}}
+if(t.id==="sq"){st.q=t.value;$("#mn2").innerHTML=menuHTML()}});
+window.addEventListener("scroll",()=>{const n=$("#nv");n&&n.classList.toggle("sc",scrollY>20)},{passive:true});
+window.addEventListener("hashchange",render);
+render();
+</script></body></html>
